@@ -1,4 +1,5 @@
 import telebot
+import bs4
 from Task import Task
 import parser
 import markups as m
@@ -6,6 +7,7 @@ import markups as m
 #main variables
 TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
 bot = telebot.TeleBot(TOKEN)
+task = Task()
 
 @bot.message_handler(commands=['record'])
 def record_handler(message):
