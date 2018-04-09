@@ -2,7 +2,7 @@ import telebot
 import parser
 
 #main variables
-TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
