@@ -9,11 +9,8 @@ bot = telebot.TeleBot(TOKEN)
 def record_handler(message):
     bot.send_message(message.chat.id, 'Забронировать игру ')
 
-
 @bot.message_handler(commands=['start'])
 def start_handler(message):
     bot.send_message(message.chat.id, 'Привет,я чат-бот клуба виртуальной реальности ')
-bot.polling()
 
-
-
+bot.polling(none_stop=True)
