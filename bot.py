@@ -5,9 +5,9 @@ import parser
 TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
 bot = telebot.TeleBot(TOKEN)
 
-#@bot.message_handler(commands=['record'])
-#def record_handler(message):
-   # bot.send_message(message.chat.id, 'Забронировать игру ')
+@bot.message_handler(commands=['record'])
+def record_handler(message):
+    bot.send_message(message.chat.id, 'Забронировать игру ')
 
 @bot.message_handler(commands=['start'])
 def start_handler(message):
@@ -29,5 +29,5 @@ def askAge(message):
     msg = bot.send_message(chat_id, 'Спасибо, я запомнил что вам ' + text + ' лет.')
     isRunning = False    
 
-#bot.polling(none_stop=True)
+bot.polling(none_stop=True)
 
