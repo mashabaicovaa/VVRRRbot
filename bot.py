@@ -29,5 +29,5 @@ def askAge(message):
     msg = bot.send_message(chat_id, 'Спасибо, я запомнил что вам ' + text + ' лет.')
     isRunning = False    
 
-bot.polling(none_stop=True)
+#bot.polling(none_stop=True)
 
