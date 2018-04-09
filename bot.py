@@ -7,9 +7,9 @@ TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
 bot = telebot.TeleBot(TOKEN)
 task = Task()
 
-@bot.message_handler(commands=['record'])
-def record_handler(message):
-    bot.send_message(message.chat.id, 'Забронировать игру ')
+#@bot.message_handler(commands=['record'])
+#def record_handler(message):
+   # bot.send_message(message.chat.id, 'Забронировать игру ')
 
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
@@ -23,15 +23,15 @@ def askSource(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[0]:
-        task.mySource = 'top'
-        msg = bot.send_message(chat_id, 'За какой временной промежуток?', reply_markup=m.age_markup)
+        task.mySource = 'игра'
+        msg = bot.send_message(chat_id, 'Сколько человек придет на игру?', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askAge)
     elif text in task.names[1]:
-        task.mySource = 'all'
-        msg = bot.send_message(chat_id, 'Какой минимальный порог рейтинга?', reply_markup=m.rating_markup)
+        task.mySource = 'цена'
+        msg = bot.send_message(chat_id, 'Сколько стоит игра?', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     else:
-        msg = bot.send_message(chat_id, 'Такого раздела нет. Введите раздел корректно.')
+        msg = bot.send_message(chat_id, 'Мы находимся тут.')
         bot.register_next_step_handler(msg, askSource)
         return
 
