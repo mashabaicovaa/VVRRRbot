@@ -1,7 +1,5 @@
 import telebot
-import bs4
 from Task import Task
-import parser
 import markups as m
 
 #main variables
@@ -20,6 +18,22 @@ def start_handler(message):
         msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.source_markup)
         bot.register_next_step_handler(msg, askSource)
         task.isRunning = True
+        
+def askSource(message):
+    chat_id = message.chat.id
+    text = message.text.lower()
+    if text in task.names[0]:
+        task.mySource = 'top'
+        msg = bot.send_message(chat_id, 'За какой временной промежуток?', reply_markup=m.age_markup)
+        bot.register_next_step_handler(msg, askAge)
+    elif text in task.names[1]:
+        task.mySource = 'all'
+        msg = bot.send_message(chat_id, 'Какой минимальный порог рейтинга?', reply_markup=m.rating_markup)
+        bot.register_next_step_handler(msg, askRating)
+    else:
+        msg = bot.send_message(chat_id, 'Такого раздела нет. Введите раздел корректно.')
+        bot.register_next_step_handler(msg, askSource)
+        return
 
 bot.polling(none_stop=True)
 
