@@ -9,23 +9,25 @@ bot = telebot.TeleBot(TOKEN)
 def record_handler(message):
     bot.send_message(message.chat.id, 'Забронировать игру ')
 
-@bot.message_handler(commands=['start')
+@bot.message_handler(commands=['start'])
 def start_handler(message):
-    chat_id = message.chat.id
-    text = message.text
-    msg = bot.send_message(chat_id, 'Привет, я чат-бот виртуальной реальности./n Нажми 1 если хочешь забронировать игру или нажми для просмотра цен и другой информации')
-    bot.register_next_step_handler(msg, askAge)
+    global isRunning
+    if not isRunning:
+        chat_id = message.chat.id
+        text = message.text
+        msg = bot.send_message(chat_id, 'Сколько вам лет?')
+        bot.register_next_step_handler(msg, askAge) #askSource
+        isRunning = True
 
 def askAge(message):
     chat_id = message.chat.id
     text = message.text
-    if  text.isdigit():
+    if not text.isdigit():
         msg = bot.send_message(chat_id, 'Возраст должен быть числом, введите ещё раз.')
         bot.register_next_step_handler(msg, askAge) #askSource
         return
     msg = bot.send_message(chat_id, 'Спасибо, я запомнил что вам ' + text + ' лет.')
-
-    
+    isRunning = False    
 
 bot.polling(none_stop=True)
 
