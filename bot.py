@@ -11,7 +11,7 @@ def record_handler(message):
 
 @bot.message_handler(commands=['start'])
 def start_handler(message):
-    global isRunning
+global isRunning
     if not isRunning:
         chat_id = message.chat.id
         text = message.text
