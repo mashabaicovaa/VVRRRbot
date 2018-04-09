@@ -8,7 +8,6 @@ source_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 source_markup_btn1 = types.KeyboardButton('Забронировать игру')
 source_markup_btn2 = types.KeyboardButton('Цены')
 source_markup_btn3 = types.KeyboardButton('Где мы?')
-
 source_markup.add(source_markup_btn1, source_markup_btn2, sourse_markup_btn3)
 
 age_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
