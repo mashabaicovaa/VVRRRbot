@@ -11,7 +11,7 @@ def start_handler(message):
 bot.polling()
 
 @bot.message_handler(commands=['record'])
-def start_handler(message):
+def record_handler(message):
     bot.send_message(message.chat.id, 'Забронировать игру ')
 bot.polling()
 
