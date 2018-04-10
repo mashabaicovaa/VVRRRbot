@@ -45,7 +45,7 @@ def askAge(message):
 
 def askAmount(message):
     chat_id = message.chat.id
-    
     isRunning = False
+    
 bot.polling(none_stop=True)
 
