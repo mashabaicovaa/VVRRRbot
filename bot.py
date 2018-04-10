@@ -7,10 +7,6 @@ TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
 bot = telebot.TeleBot(TOKEN)
 task = Task()
 
-#@bot.message_handler(commands=['record'])
-#def record_handler(message):
-   # bot.send_message(message.chat.id, 'Забронировать игру ')
-
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
     if not task.isRunning:
