@@ -15,6 +15,7 @@ def start_handler(message):
         bot.register_next_step_handler(msg, askSource)
         task.isRunning = True
     else:
+        chat_id = message.chat.id
         bot.send_message(chat_id, 'Я еще работаю')
         
 def askSource(message):
