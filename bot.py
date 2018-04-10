@@ -46,6 +46,9 @@ def askAge(message):
     task.myFilter = task.filters_code_names[0][filters.index(text)]
     msg = bot.send_message(chat_id, 'Сколько страниц парсить?')
     bot.register_next_step_handler(msg, askAmount)
+
+def askAmount(message):
+    chat_id = message.chat.id
     
     isRunning = False
 bot.polling(none_stop=True)
