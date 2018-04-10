@@ -14,9 +14,6 @@ def start_handler(message):
         msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.source_markup)
         bot.register_next_step_handler(msg, askSource)
         task.isRunning = True
-    else:
-        chat_id = message.chat.id
-        bot.send_message(chat_id, 'Я еще работаю')
         
 def askSource(message):
     chat_id = message.chat.id
@@ -38,7 +35,7 @@ def askAge(message):
     text = message.text.lower()
     filters = task.filters[0]
     if text not in filters:
-        msg = bot.send_message(chat_id, 'Такой категории нет.')
+        msg = bot.send_message(chat_id, 'Такой категории нет.Пожалуйста выберите другую категорию')
         bot.register_next_step_handler(msg, askAge)
         return
     task.myFilter = task.filters_code_names[0][filters.index(text)]
