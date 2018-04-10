@@ -24,7 +24,7 @@ def askSource(message):
     text = message.text.lower()
     if text in task.names[0]:
         task.mySource = 'игра'
-        msg = bot.send_message(chat_id, 'Сколько человек придет на игру?', reply_markup=m.age_markup)
+        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askAge)
     elif text in task.names[1]:
         task.mySource = 'цена'
