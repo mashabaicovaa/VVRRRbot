@@ -35,5 +35,17 @@ def askSource(message):
         bot.register_next_step_handler(msg, askSource)
         return
 
+def askAge(message):
+    chat_id = message.chat.id
+    text = message.text.lower()
+    filters = task.filters[0]
+    if text not in filters:
+        msg = bot.send_message(chat_id, 'Такой категории нет.')
+        bot.register_next_step_handler(msg, askAge)
+        return
+    task.myFilter = task.filters_code_names[0][filters.index(text)]
+    msg = bot.send_message(chat_id, 'Сколько страниц парсить?')
+    bot.register_next_step_handler(msg, askAmount)
+
 bot.polling(none_stop=True)
 
