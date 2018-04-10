@@ -33,14 +33,15 @@ def askSource(message):
 def askAge(message):
     chat_id = message.chat.id
     text = message.text.lower()
-    filters = task.filters[0]
+    filters = task.filters
     if text not in filters:
         msg = bot.send_message(chat_id, 'Такой категории нет.Пожалуйста выберите другую категорию')
         bot.register_next_step_handler(msg, askAge)
         return
-    task.myFilter = task.filters_code_names[0][filters.index(text)]
-    msg = bot.send_message(chat_id, 'Сколько страниц парсить?')
-    bot.register_next_step_handler(msg, askAmount)
+    elif text == task.filters[0]:
+    #task.myFilter = task.filters_code_names[0][filters.index(text)]
+        msg = bot.send_message(chat_id, '1. TheBlu - подводный мир \n 2. Richies plank experience - страх высоты')
+        bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
     chat_id = message.chat.id
