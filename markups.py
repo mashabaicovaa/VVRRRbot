@@ -10,7 +10,7 @@ source_markup_btn2 = types.KeyboardButton('Цены')
 source_markup_btn3 = types.KeyboardButton('Где мы?')
 source_markup.add(source_markup_btn1, source_markup_btn2, source_markup_btn3)
 
-age_markup = types.ReplyKeyboardMarkup(row_width=5, resize_keyboard=True)
+age_markup = types.ReplyKeyboardMarkup(row_width=5, row_height=2, resize_keyboard=True)
 age_markup_btn1 =  types.KeyboardButton('Впечатления')
 age_markup_btn2 =  types.KeyboardButton('Игры для команды до 4-х человек')
 age_markup_btn3 =  types.KeyboardButton('Квесты')
