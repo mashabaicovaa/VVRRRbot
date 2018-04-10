@@ -31,7 +31,6 @@ def askSource(message):
         bot.register_next_step_handler(msg, askRating)
     else:
         msg = bot.send_message(chat_id, 'Бронирование и адрес')
-        bot.register_next_step_handler(msg, askSource)
         return
 
 def askAge(message):
