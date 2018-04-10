@@ -14,6 +14,8 @@ def start_handler(message):
         msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.source_markup)
         bot.register_next_step_handler(msg, askSource)
         task.isRunning = True
+    else:
+        bot.send_message(chat_id, 'Я еще работаю')
         
 def askSource(message):
     chat_id = message.chat.id
