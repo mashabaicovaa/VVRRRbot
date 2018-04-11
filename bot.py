@@ -31,7 +31,7 @@ def askSource(message):
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
 
-Sdef askAge(message):
+def askAge(message):
     chat_id = message.chat.id
     text = message.text.lower()
     filters = task.filters
