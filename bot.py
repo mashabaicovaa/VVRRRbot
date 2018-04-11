@@ -41,7 +41,7 @@ def askAge(message):
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        msg = bot.send_message(chat_id, game.game1, reply_markup=m.rating_markup)
+        msg = bot.send_message(chat_id, game.game1[0], reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
