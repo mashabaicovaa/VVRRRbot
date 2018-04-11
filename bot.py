@@ -41,8 +41,15 @@ def askAge(message):
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        msg = bot.send_message(chat_id, game.game1 )
-        bot.register_next_step_handler(msg, askAmount)
+        #msg = bot.send_message(chat_id, game.game1 )
+        gamesCount=len(game.game1)
+        if not gamesCount==0:
+            for i in xrange(0,gamesCount):
+                if not i==gamesCount-1:
+                     bot.send_message(chat_id, game.game1[i])
+                else:
+                     msg = bot.send_message(chat_id, game.game1[i])            
+                     bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
     chat_id = message.chat.id
