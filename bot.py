@@ -51,9 +51,22 @@ def askAge(message):
                      msg = bot.send_message(chat_id, game.game1[i], reply_markup=m.game_markup)            
                      bot.register_next_step_handler(msg, askAmount)
 
+
+
 def askAmount(message):
     chat_id = message.chat.id
     text = message.text.lower()
+    if text in task.names[3]:
+        task.mySource = 'забронировать'
+        msg = bot.send_message(chat_id, 'Давайте забронируем время', reply_markup=m.age_markup)
+        bot.register_next_step_handler(msg, askAge)
+    elif text in task.names[1]:
+        task.mySource = 'цена'
+        msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
+        bot.register_next_step_handler(msg, askRating)
+    else:
+        msg = bot.send_message(chat_id, askAge(message))
+        return
     msg = bot.send_message(chat_id, text) 
     task.isRunning = False
     
