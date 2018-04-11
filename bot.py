@@ -31,7 +31,7 @@ def askSource(message):
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
 
-def askAge(message):
+Sdef askAge(message):
     chat_id = message.chat.id
     text = message.text.lower()
     filters = task.filters
@@ -41,7 +41,7 @@ def askAge(message):
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        msg = bot.send_message(chat_id, 'ffff', reply_markup=m.game_markup)
+        msg = bot.send_message(chat_id, game.game1 )
         bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
