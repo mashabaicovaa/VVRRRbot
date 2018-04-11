@@ -44,7 +44,7 @@ def askAge(message):
         #msg = bot.send_message(chat_id, game.game1 )
         gamesCount=len(game.game1)
         if not gamesCount==0:
-            for i in xrange(0,gamesCount):
+            for i in range(0,gamesCount):
                 if not i==gamesCount-1:
                      bot.send_message(chat_id, game.game1[i])
                 else:
