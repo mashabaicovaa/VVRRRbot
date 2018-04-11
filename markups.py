@@ -21,6 +21,6 @@ age_markup.add(age_markup_btn1, age_markup_btn2, age_markup_btn3, age_markup_btn
 
 game_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 game_markup_btn1 =  types.KeyboardButton('Забронировать игру')
-game_markup_btn1 =  types.KeyboardButton('Посмореть цены')
-game_markup_btn1 =  types.KeyboardButton('Вернуться в каталог игр')
+game_markup_btn2 =  types.KeyboardButton('Посмореть цены')
+game_markup_btn3 =  types.KeyboardButton('Вернуться в каталог игр')
 game_markup.add(game_markup_btn1, game_markup_btn2, game_markup_btn3)
