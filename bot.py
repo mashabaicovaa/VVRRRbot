@@ -58,7 +58,7 @@ def askAmount(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[3]:
-        task.mySource = 'забронировать'
+        #task.mySource = 'забронировать'
         msg = bot.send_message(chat_id, 'Давайте забронируем время', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askA)
     elif text in task.names[1]:
