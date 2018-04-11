@@ -19,7 +19,7 @@ age_markup_btn5 =  types.KeyboardButton('Игры для команд до 4-х 
 age_markup_btn6 =  types.KeyboardButton('Вернуться в каталог игр')
 age_markup.add(age_markup_btn1, age_markup_btn2, age_markup_btn3, age_markup_btn4, age_markup_btn5, age_markup_btn6)
 
-game_markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+game_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 game_markup_btn1 =  types.KeyboardButton('Забронировать игру')
 game_markup_btn1 =  types.KeyboardButton('Посмореть цены')
 game_markup_btn1 =  types.KeyboardButton('Вернуться в каталог игр')

@@ -25,10 +25,10 @@ def askSource(message):
         bot.register_next_step_handler(msg, askAge)
     elif text in task.names[1]:
         task.mySource = 'цена'
-        msg = bot.send_message(chat_id, 'Стоимость игр', reply_markup=m.rating_markup)
+        msg = bot.send_message(chat_id, 'Цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     else:
-        msg = bot.send_message(chat_id, 'Бронирование и адрес')
+        msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
 
 def askAge(message):
@@ -41,7 +41,7 @@ def askAge(message):
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        msg = bot.send_message(chat_id, 'ffff', reply_markup=m.amount_markup)
+        msg = bot.send_message(chat_id, 'ffff', reply_markup=m.game_markup)
         bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
