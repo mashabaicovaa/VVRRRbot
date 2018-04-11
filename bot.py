@@ -1,6 +1,7 @@
 import telebot
 from Task import Task
 import markups as m
+from game import game
 
 #main variables
 TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
@@ -40,7 +41,7 @@ def askAge(message):
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        msg = bot.send_message(chat_id, '1. TheBlu - подводный мир \n 2. Richies plank experience - страх высоты')
+        msg = bot.send_message(chat_id, game.game1)
         bot.register_next_step_handler(msg, askAmount)
 
 def askAmount(message):
