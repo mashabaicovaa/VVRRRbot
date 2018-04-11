@@ -20,11 +20,11 @@ def askSource(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[0]:
-        task.mySource = 'игры'
+        #task.mySource = 'игры'
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askAge)
     elif text in task.names[1]:
-        task.mySource = 'цена'
+        #task.mySource = 'цена'
         msg = bot.send_message(chat_id, 'Цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     else:
