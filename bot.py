@@ -64,11 +64,12 @@ def askAmount(message):
         task.mySource = 'цены'
         msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
-    else:
+    elif text in task.names[0]:
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
-        bot.register_next_step_handler(msg, askRating)
-    msg = bot.send_message(chat_id, text) 
-    task.isRunning = False
+        bot.register_next_step_handler(msg, askAge)
+    else:
+        bot.send_message(chat_id, 'Бот завершил работу')
+        task.isRunning = False
     
 bot.polling(none_stop=True)
 
