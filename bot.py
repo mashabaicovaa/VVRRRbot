@@ -70,8 +70,8 @@ def askAmount(message):
         bot.register_next_step_handler(msg, askAge)
     else:
         if text not in filters:
-        msg = bot.send_message(chat_id, 'Такой категории нет.Пожалуйста выберите другую категорию')
-        bot.register_next_step_handler(msg, askAge)
+        msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
+        bot.register_next_step_handler(msg, askAmount)
         return
 
 def askA(message):
