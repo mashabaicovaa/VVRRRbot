@@ -69,7 +69,6 @@ def askAmount(message):
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askAge)
     else:
-        if text not in filters:
         msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
         bot.register_next_step_handler(msg, askAmount)
         return
