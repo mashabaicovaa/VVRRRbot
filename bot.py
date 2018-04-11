@@ -60,17 +60,25 @@ def askAmount(message):
     if text in task.names[3]:
         task.mySource = 'забронировать'
         msg = bot.send_message(chat_id, 'Давайте забронируем время', reply_markup=m.age_markup)
-        bot.register_next_step_handler(msg, askAge)
+        bot.register_next_step_handler(msg, askA)
     elif text in task.names[1]:
-        task.mySource = 'цены'
+        #task.mySource = 'цены'
         msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     elif text in task.names[0]:
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
         bot.register_next_step_handler(msg, askAge)
     else:
-        bot.send_message(chat_id, 'Бот завершил работу')
-        task.isRunning = False
+        if text not in filters:
+        msg = bot.send_message(chat_id, 'Такой категории нет.Пожалуйста выберите другую категорию')
+        bot.register_next_step_handler(msg, askAge)
+        return
+
+def askA(message):
+    chat_id = message.chat.id
+    text = message.text.lower()
+    bot.send_message(chat_id, 'Бот завершил работу')
+    task.isRunning = False
     
 bot.polling(none_stop=True)
 
