@@ -65,7 +65,7 @@ def askAmount(message):
         msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     else:
-        msg = bot.send_message(chat_id, askAge(message))
+        def askAge
         return
     msg = bot.send_message(chat_id, text) 
     task.isRunning = False
