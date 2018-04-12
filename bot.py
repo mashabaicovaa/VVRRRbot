@@ -50,11 +50,11 @@ def game_catalog(message):
                 else:
                      msg = bot.send_message(chat_id, game.game1[i], reply_markup=m.game_markup)
                      
-                     bot.register_next_step_handler(msg, askAmount)
+                     bot.register_next_step_handler(msg, game_menu)
 
 
 
-def askAmount(message):
+def game_menu(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[3]:
@@ -70,7 +70,7 @@ def askAmount(message):
         bot.register_next_step_handler(msg, game_catalog)
     else:
         msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
-        bot.register_next_step_handler(msg, askAmount)
+        bot.register_next_step_handler(msg, game_menu)
         return
 
 def askA(message):
