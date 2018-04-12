@@ -16,6 +16,7 @@ def start_handler(message):
         bot.register_next_step_handler(msg, main_menu)
         task.isRunning = True
     else:
+        chat_id = message.chat.id
         bot.send_message(chat_id, 'Я занят')
         
 def main_menu(message):
