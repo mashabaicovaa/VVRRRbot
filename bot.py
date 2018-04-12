@@ -57,6 +57,16 @@ def game_catalog(message):
                      msg = bot.send_message(chat_id, game.game2[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
+    elif text == task.filters[2]:
+        gamesCount=len(game.game1)
+        if not gamesCount==0:
+            for i in range(0,gamesCount):
+                if not i==gamesCount-1:
+                     bot.send_message(chat_id, game.game3[i], reply_markup=m.game_markup)
+                else:
+                     msg = bot.send_message(chat_id, game.game3[i], reply_markup=m.game_markup)
+                     
+                     bot.register_next_step_handler(msg, game_menu)
 
 
 
