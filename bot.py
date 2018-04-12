@@ -88,8 +88,8 @@ def game_catalog(message):
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[5]:
-        msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, чтоты хочешь посмотреть', reply_markup=m.manu_markup)
-        bot.register_next_step_handler(msg, main_manu)
+        msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, чтоты хочешь посмотреть', reply_markup=m.menu_markup)
+        bot.register_next_step_handler(msg, main_menu)
 
 
 def game_menu(message):
