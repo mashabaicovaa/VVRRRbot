@@ -24,7 +24,7 @@ def main_menu(message):
         bot.register_next_step_handler(msg, game_catalog)
     elif text in task.names[1]:
         msg = bot.send_message(chat_id, 'Цены', reply_markup=m.rating_markup)
-        bot.register_next_step_handler(msg, askRating)
+        bot.register_next_step_handler(msg, price)
     else:
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
@@ -107,6 +107,16 @@ def game_menu(message):
     else:
         msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
         bot.register_next_step_handler(msg, game_menu)
+        return
+
+def price(message):
+    chat_id = message.chat.id
+    text = message.text.lower()
+    if text in task.price[0]:
+        msg = bot.send_message(chat_id, price.price, reply_markup=m.menu_markup)
+        bot.register_next_step_handler(msg, main_menu)
+    else:
+        msg = bot.send_message(chat_id, 'Я Вас не понимаю, пожалуйста ыернитесь в главное меню.')
         return
 
 def askA(message):

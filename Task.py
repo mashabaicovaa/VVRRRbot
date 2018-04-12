@@ -22,6 +22,9 @@ class Task():
         ['daily', 'weekly', 'monthly'],
         ['all', 'top10', 'top25', 'top50', 'top100']
     ]
+    price = [
+        ['показать цены','цена', 'цену']
+        ]
     
     mySource = ''
     myFilter = ''
