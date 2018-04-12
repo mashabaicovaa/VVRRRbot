@@ -20,11 +20,9 @@ def main_menu(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[0]:
-        #task.mySource = 'игры'
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
         bot.register_next_step_handler(msg, game_catalog)
     elif text in task.names[1]:
-        #task.mySource = 'цена'
         msg = bot.send_message(chat_id, 'Цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     else:
@@ -40,8 +38,6 @@ def game_catalog(message):
         bot.register_next_step_handler(msg, game_catalog)
         return
     elif text == task.filters[0]:
-    #task.myFilter = task.filters_code_names[0][filters.index(text)]
-        #msg = bot.send_message(chat_id, game.game1 )
         gamesCount=len(game.game1)
         if not gamesCount==0:
             for i in range(0,gamesCount):
@@ -58,11 +54,9 @@ def game_menu(message):
     chat_id = message.chat.id
     text = message.text.lower()
     if text in task.names[3]:
-        #task.mySource = 'забронировать'
         msg = bot.send_message(chat_id, 'Давайте забронируем время')
         bot.register_next_step_handler(msg, askA)
     elif text in task.names[1]:
-        #task.mySource = 'цены'
         msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     elif text in task.names[0]:
