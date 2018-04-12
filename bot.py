@@ -12,7 +12,7 @@ task = Task()
 def start_handler(message):
     if not task.isRunning:
         chat_id = message.chat.id
-        msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.source_markup)
+        msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.menu_markup)
         bot.register_next_step_handler(msg, menu)
         task.isRunning = True
         
