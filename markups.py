@@ -8,7 +8,7 @@ menu_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 menu_markup_btn1 = types.KeyboardButton('Игры')
 menu_markup_btn2 = types.KeyboardButton('Цены')
 menu_markup_btn3 = types.KeyboardButton('Где мы?')
-menu_markup.add(menu_markup_btn1, menu_markup_btn2, smenu_markup_btn3)
+menu_markup.add(menu_markup_btn1, menu_markup_btn2, menu_markup_btn3)
 
 age_markup = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 age_markup_btn1 =  types.KeyboardButton('Впечатления')
