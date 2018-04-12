@@ -110,8 +110,8 @@ def game_menu(message):
         return
 
 def price(message):
-    if text in task.filters[5]:
-        msg = bot.send_message(chat_id, 'Выберите что вы хотите посмотреть', reply_markup=m.menu_markup)
+    if text == task.filters[5]:
+        msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, чтоты хочешь посмотреть', reply_markup=m.menu_markup)
         bot.register_next_step_handler(msg, main_menu)
     else:
         msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
