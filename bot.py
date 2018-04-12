@@ -24,9 +24,12 @@ def main_menu(message):
         bot.register_next_step_handler(msg, game_catalog)
     elif text in task.names[1]:
         msg = bot.send_message(chat_id, task.all_price, reply_markup=m.menu_markup)
-        bot.register_next_step_handler(msg, main_menu)        
+        bot.register_next_step_handler(msg, main_menu)
+    elif text in task.names[4]:
+        msg = bot.send_message(chat_id, task.adress, reply_markup=m.menu_markup)
+        bot.register_next_step_handler(msg, main_menu)
     else:
-        msg = bot.send_message(chat_id, 'Где мы находимся ?')
+        msg = bot.send_message(chat_id, 'Пожалуста, выберите из предложенных вариантов')
         return
 
 def game_catalog(message):
