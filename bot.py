@@ -86,7 +86,7 @@ def game_catalog(message):
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game_for5[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_for4[i], reply_markup=m.game_markup)
                 else:
                      msg = bot.send_message(chat_id, game.game_for4[i], reply_markup=m.game_markup)
                      
