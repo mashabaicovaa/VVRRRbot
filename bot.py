@@ -99,7 +99,7 @@ def game_menu(message):
         msg = bot.send_message(chat_id, 'Давайте забронируем время')
         bot.register_next_step_handler(msg, askA)
     elif text in task.names[1]:
-        msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
+        msg = bot.send_message(chat_id, task.all_price, reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     elif text in task.names[0]:
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
