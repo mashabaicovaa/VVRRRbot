@@ -90,11 +90,6 @@ def game_catalog(message):
     elif text in task.menu[0]:
         msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, чтоты хочешь посмотреть', reply_markup=m.manu_markup)
         bot.register_next_step_handler(msg, main_manu)
-    else:
-        msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
-        bot.register_next_step_handler(msg, game_catalog)
-        return
-
 
 
 def game_menu(message):
