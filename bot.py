@@ -24,7 +24,7 @@ def main_menu(message):
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
         bot.register_next_step_handler(msg, game_catalog)
     elif text in task.names[1]:
-        msg = bot.send_message(chat_id, 'wtyg')
+        msg = bot.send_message(chat_id, 'wtyg', reply_markup=m.back_markup)
         bot.register_next_step_handler(msg, askA)
     else:
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
