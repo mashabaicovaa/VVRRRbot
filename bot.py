@@ -30,6 +30,7 @@ def main_menu(message):
         bot.register_next_step_handler(msg, main_menu)
     else:
         msg = bot.send_message(chat_id, 'Пожалуйста, выберите из предложенных вариантов')
+        bot.register_next_step_handler(msg, main_menu)
         return
 
 def game_catalog(message):
