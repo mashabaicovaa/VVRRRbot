@@ -24,8 +24,18 @@ def main_menu(message):
         msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
         bot.register_next_step_handler(msg, game_catalog)
     elif text == task.names[1]:
-        msg = bot.send_message(chat_id, price.all_price, reply_markup=m.back_markup)
-        bot.register_next_step_handler(msg, askA)
+        #msg = bot.send_message(chat_id, price.all_price, reply_markup=m.back_markup)
+        #bot.register_next_step_handler(msg, askA)
+        priceCount=len(price.all_price)
+        if not priceCount==0:
+            for i in range(0,priceCount):
+                if not i==priceCount-1:
+                     bot.send_message(chat_id, price.all_price[i], reply_markup=m.back_markup)
+                else:
+                     msg = bot.send_message(chat_id, price.all_price[i], reply_markup=m.back_markup)
+                     
+                     bot.register_next_step_handler(msg, game_menu)
+        
     else:
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
