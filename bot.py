@@ -2,7 +2,6 @@ import telebot
 from Task import Task
 import markups as m
 from game import game
-from price import price
 
 #main variables
 TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
@@ -110,15 +109,6 @@ def game_menu(message):
         bot.register_next_step_handler(msg, game_menu)
         return
 
-def price(message):
-    chat_id = message.chat.id
-    text = message.text.lower()
-    if text in task.price[0]:
-        msg = bot.send_message(chat_id, price.price, reply_markup=m.menu_markup)
-        bot.register_next_step_handler(msg, main_menu)
-    else:
-        msg = bot.send_message(chat_id, 'Я Вас не понимаю, пожалуйста ыернитесь в главное меню.')
-        return
 
 def askA(message):
     chat_id = message.chat.id
