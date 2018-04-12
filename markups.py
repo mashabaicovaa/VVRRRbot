@@ -24,3 +24,7 @@ game_markup_btn1 =  types.KeyboardButton('Забронировать время'
 game_markup_btn2 =  types.KeyboardButton('Посмотреть цены')
 game_markup_btn3 =  types.KeyboardButton('Вернуться в каталог игр')
 game_markup.add(game_markup_btn1, game_markup_btn2, game_markup_btn3)
+
+back_markup = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+back_markup_btn1 =  types.KeyboardButton('Вернуться в главное меню')
+back_markup.add(back_markup_btn1)
