@@ -87,6 +87,9 @@ def game_catalog(message):
                      msg = bot.send_message(chat_id, game.game5[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
+    elif text in task.names[0]:
+        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
+        bot.register_next_step_handler(msg, game_catalog
 
 
 
