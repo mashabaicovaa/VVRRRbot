@@ -21,8 +21,8 @@ def menu(message):
     text = message.text.lower()
     if text in task.names[0]:
         #task.mySource = 'игры'
-        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
-        bot.register_next_step_handler(msg, askAge)
+        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
+        bot.register_next_step_handler(msg, game_catalog)
     elif text in task.names[1]:
         #task.mySource = 'цена'
         msg = bot.send_message(chat_id, 'Цены', reply_markup=m.rating_markup)
@@ -31,13 +31,13 @@ def menu(message):
         msg = bot.send_message(chat_id, 'Где мы находимся ?')
         return
 
-def askAge(message):
+def game_catalog(message):
     chat_id = message.chat.id
     text = message.text.lower()
     filters = task.filters
     if text not in filters:
         msg = bot.send_message(chat_id, 'Такой категории нет.Пожалуйста выберите другую категорию')
-        bot.register_next_step_handler(msg, askAge)
+        bot.register_next_step_handler(msg, game_catalog)
         return
     elif text == task.filters[0]:
     #task.myFilter = task.filters_code_names[0][filters.index(text)]
@@ -66,8 +66,8 @@ def askAmount(message):
         msg = bot.send_message(chat_id, 'Прайс на цены', reply_markup=m.rating_markup)
         bot.register_next_step_handler(msg, askRating)
     elif text in task.names[0]:
-        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.age_markup)
-        bot.register_next_step_handler(msg, askAge)
+        msg = bot.send_message(chat_id, 'Выберите категорию игр', reply_markup=m.catalog_markup)
+        bot.register_next_step_handler(msg, game_catalog)
     else:
         msg = bot.send_message(chat_id, 'Я Вас не понял. Выберите, пожалуйста, еще раз.')
         bot.register_next_step_handler(msg, askAmount)
