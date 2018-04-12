@@ -42,53 +42,53 @@ def game_catalog(message):
         bot.register_next_step_handler(msg, game_catalog)
         return
     elif text == task.filters[0]:
-        gamesCount=len(game.game1)
+        gamesCount=len(game.game_imp)
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game1[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_imp[i], reply_markup=m.game_markup)
                 else:
-                     msg = bot.send_message(chat_id, game.game1[i], reply_markup=m.game_markup)
+                     msg = bot.send_message(chat_id, game.game_imp[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[1]:
-        gamesCount=len(game.game1)
+        gamesCount=len(game.game_sim)
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game2[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_sim[i], reply_markup=m.game_markup)
                 else:
-                     msg = bot.send_message(chat_id, game.game2[i], reply_markup=m.game_markup)
+                     msg = bot.send_message(chat_id, game.game_sim[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[2]:
-        gamesCount=len(game.game1)
+        gamesCount=len(game.game_quest)
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game3[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_quest[i], reply_markup=m.game_markup)
                 else:
-                     msg = bot.send_message(chat_id, game.game3[i], reply_markup=m.game_markup)
+                     msg = bot.send_message(chat_id, game.game_quest[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[3]:
-        gamesCount=len(game.game1)
+        gamesCount=len(game.game_all)
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game4[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_all[i], reply_markup=m.game_markup)
                 else:
-                     msg = bot.send_message(chat_id, game.game4[i], reply_markup=m.game_markup)
+                     msg = bot.send_message(chat_id, game.game_all[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[4]:
-        gamesCount=len(game.game1)
+        gamesCount=len(game.game_for4)
         if not gamesCount==0:
             for i in range(0,gamesCount):
                 if not i==gamesCount-1:
-                     bot.send_message(chat_id, game.game5[i], reply_markup=m.game_markup)
+                     bot.send_message(chat_id, game.game_for5[i], reply_markup=m.game_markup)
                 else:
-                     msg = bot.send_message(chat_id, game.game5[i], reply_markup=m.game_markup)
+                     msg = bot.send_message(chat_id, game.game_for4[i], reply_markup=m.game_markup)
                      
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[5]:
