@@ -12,7 +12,9 @@ task = Task()
 def start_handler(message):
     if not task.isRunning:
         chat_id = message.chat.id
-        msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности. Пожалуйста, выбери внизу из предложенных вариантов что ты хочешь посмотреть', reply_markup=m.menu_markup)
+        msg = bot.send_message(chat_id, 'Привет, я чат-бот клуба виртуальной реальности.'
+                                        ' Пожалуйста, выбери внизу из предложенных вариантов'
+                                        ' что ты хочешь посмотреть', reply_markup=m.menu_markup)
         bot.register_next_step_handler(msg, main_menu)
         task.isRunning = True
     else:
@@ -92,10 +94,9 @@ def game_catalog(message):
                      bot.send_message(chat_id, game.game_for4[i], reply_markup=m.game_markup)
                 else:
                      msg = bot.send_message(chat_id, game.game_for4[i], reply_markup=m.game_markup)
-                     
                      bot.register_next_step_handler(msg, game_menu)
     elif text == task.filters[5]:
-        msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, чтоты хочешь посмотреть', reply_markup=m.menu_markup)
+        msg = bot.send_message(chat_id, 'Пожалуйста, выбери из представленных внизу вариантов, что ты хочешь посмотреть', reply_markup=m.menu_markup)
         bot.register_next_step_handler(msg, main_menu)
 
 
