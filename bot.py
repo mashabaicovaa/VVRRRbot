@@ -4,7 +4,7 @@ import markups as m
 from game import game
 
 #main variables
-TOKEN = "540973546:AAHkrTMvWclty8NSkCsQ1Bc5WqIiOUgvEUw"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 task = Task()
 
